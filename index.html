@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S04 · Inventario de tripulación — Misión Red Planet I</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <h1>Misión Red Planet I</h1>
+    <p class="subtitulo">Revisa el registro de la tripulación antes de autorizar el despegue.</p>
+
+    <div class="rejilla">
+      <section aria-labelledby="titulo-alta">
+        <h2 id="titulo-alta">Registrar astronauta</h2>
+        <form id="formAstronauta" novalidate>
+          <label>Nombre
+            <input id="nombre" type="text" autocomplete="off" required>
+          </label>
+          <label>Rol
+            <input id="rol" type="text" autocomplete="off" required>
+          </label>
+          <label>Experiencia (años)
+            <input id="experiencia" type="number" min="0" step="1" inputmode="numeric" required>
+          </label>
+          <button type="submit" class="principal">Agregar</button>
+        </form>
+        <p id="mensaje" role="status" aria-live="polite"></p>
+      </section>
+
+      <section aria-labelledby="titulo-panel">
+        <h2 id="titulo-panel">Panel de control</h2>
+        <div class="acciones">
+          <button id="btnListar">Listar tripulación</button>
+          <button id="btnFiltrar">Mostrar pilotos</button>
+          <button id="btnMedia">Calcular experiencia media</button>
+        </div>
+        <p id="salida" aria-live="polite"></p>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
