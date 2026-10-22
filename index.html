@@ -8,12 +8,12 @@
 </head>
 <body>
   <main>
-    <h1>Misión Red Planet I</h1>
-    <p class="subtitulo">Revisa el registro de la tripulación antes de autorizar el despegue.</p>
+    <h1>Tripulación</h1>
+    <p class="subtitulo">Red Planet I · Antes del despegue</p>
 
     <div class="rejilla">
       <section aria-labelledby="titulo-alta">
-        <h2 id="titulo-alta">Registrar astronauta</h2>
+        <h2 id="titulo-alta">Añadir integrante</h2>
         <form id="formAstronauta" novalidate>
           <label>Nombre
             <input id="nombre" type="text" autocomplete="off" required>
@@ -21,7 +21,7 @@
           <label>Rol
             <input id="rol" type="text" autocomplete="off" required>
           </label>
-          <label>Experiencia (años)
+          <label>Años de experiencia
             <input id="experiencia" type="number" min="0" step="1" inputmode="numeric" required>
           </label>
           <button type="submit" class="principal">Agregar</button>
@@ -30,11 +30,11 @@
       </section>
 
       <section aria-labelledby="titulo-panel">
-        <h2 id="titulo-panel">Panel de control</h2>
+        <h2 id="titulo-panel">Consultar</h2>
         <div class="acciones">
-          <button id="btnListar">Listar tripulación</button>
-          <button id="btnFiltrar">Mostrar pilotos</button>
-          <button id="btnMedia">Calcular experiencia media</button>
+          <button id="btnListar">Ver todos</button>
+          <button id="btnFiltrar">Pilotos</button>
+          <button id="btnMedia">Experiencia media</button>
         </div>
         <p id="salida" aria-live="polite"></p>
       </section>

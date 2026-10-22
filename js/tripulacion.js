@@ -10,12 +10,12 @@ export function agregarAstronauta() {
   const experiencia = Number(textoExperiencia);
 
   if (!nombre || !rol || textoExperiencia === "" || !Number.isFinite(experiencia) || experiencia < 0) {
-    avisar("Completa nombre, rol y una experiencia de 0 años o más.", true);
+    avisar("Revisa los datos e inténtalo de nuevo.", true);
     return;
   }
 
   tripulacion.push({ nombre, rol, experiencia });
-  avisar(`${nombre} se ha incorporado como ${rol}. Tripulación: ${tripulacion.length}.`);
+  avisar(`${nombre} añadido.`);
 
   document.getElementById("formAstronauta").reset();
   document.getElementById("nombre").focus();
@@ -24,7 +24,7 @@ export function agregarAstronauta() {
 // 3. Listado: helper (map) + forEach con destructuring
 export function mostrarTripulacion() {
   if (tripulacion.length === 0) {
-    mostrarSalida("No hay nadie registrado. Añade astronautas desde el formulario.");
+    mostrarSalida("No hay registros.");
     return;
   }
 
@@ -44,14 +44,14 @@ export function filtrarPorRol(rol) {
   mostrarSalida(
     coincidencias.length
       ? coincidencias.map(formatearAstronauta).join("\n")
-      : `No hay astronautas con el rol «${rol}».`
+      : `Sin resultados para «${rol}».`
   );
 }
 
 // 5. Experiencia media (reduce)
 export function calcularExperienciaMedia() {
   if (tripulacion.length === 0) {
-    mostrarSalida("No se puede calcular la media sin tripulación.");
+    mostrarSalida("No hay datos para calcular la media.");
     return;
   }
 
@@ -59,8 +59,8 @@ export function calcularExperienciaMedia() {
   const media = total / tripulacion.length;
 
   mostrarSalida(
-    `Experiencia media: ${media.toLocaleString("es-ES", { maximumFractionDigits: 2 })} años ` +
-    `(${tripulacion.length} astronautas, ${total} años en total).`
+    `Media: ${media.toLocaleString("es-ES", { maximumFractionDigits: 2 })} años ` +
+    `(${tripulacion.length} personas, ${total} años en total).`
   );
 }
 
